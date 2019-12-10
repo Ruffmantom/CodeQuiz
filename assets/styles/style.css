@@ -1,0 +1,32 @@
+
+/* Navbar */
+.navName{
+    font-size: 3em;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+}
+.navbar{
+    padding: .5rem 5rem;
+}
+/* ************* timer header ******************* */
+#timerContainer{
+    height: 50px;
+    width: 100%;
+    background-color: rgb(9, 255, 0);
+}
+#timer-left-side{
+    /* border: 1px solid black; */
+    display: flex;
+    align-items: center;
+}
+#timer-right-side{
+    /* border: 1px solid blue;    */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+}
+h4{
+    margin: auto 20px;
+}
+/* *************main section******************* */
