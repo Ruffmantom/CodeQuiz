@@ -28,8 +28,11 @@
     justify-content: flex-end;
 
 }
-h4{
-    margin: auto 20px;
+.head-h4{
+    margin: auto 10px;
+}
+#timer{
+    margin-right: 0;
 }
 /* *************main section******************* */
 .jumbotron{

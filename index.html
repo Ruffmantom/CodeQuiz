@@ -47,26 +47,26 @@
             <h4 id="questions-left">Please click begin</h4>
         </div>
         <div class="col-md-6" id="timer-right-side">
-            <h4>Quiz ends in</h4>
-            <h4 id="timer">30</h4>
+            <h4 class="head-h4" id="timer">30</h4>
+            <h4 class="head-h4">Seconds till Quiz ends</h4>
         </div>
     </div>
-    <!-- **************** mide section ********************** -->
+    <!-- **************** mid section ********************** -->
     <div class="jumbotron testBox" id="test-box">
 
         <!-- setting up for questions section once user clicks start BTN -->
         <div id="question-box" style="display: none;">
             <div id="question"></div>
             <div id="answers">
-                <button class="btn btn-primary allBtns"></button>
-                <button class="btn btn-primary allBtns"></button>
-                <button class="btn btn-primary allBtns"></button>
+                <button class="btn btn-primary allBtns" id="choiceA"></button>
+                <br><button class="btn btn-primary allBtns" id="choiceB"></button>
+                <br><button class="btn btn-primary allBtns" id="choiceC"></button>
             </div>
         </div>
         <!-- setting up the score part at the end of the quiz -->
         <div id="score-card" style="display: none;">
             <h1 id="congrats"></h1>
-            <h4 id="name-and-score"></h4>
+            <h4 id="name-and-score"><span id="score"></span></h4>
             <button id="retake" class="btn btn-primary allBtns"></button>
         </div>
 
