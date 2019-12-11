@@ -1,11 +1,11 @@
 // Quiz script
 // ********* Test box on load up *********************
 var testContainer = $('#test-box');
-// Adding variables for the first step when page loads
-var title = testContainer.append('<h1>Welcome to CodeQuiz!</h1>');
-var description = testContainer.append('<h5>Here you will see how you are doing in the class and can compare scores with other classmates</h5>');
+// creating <tag> variables for the first step when page loads
+var title = testContainer.append('<h1 id="title">Welcome to CodeQuiz!</h1>');
+var description = testContainer.append('<h5 id="description">Here you will see how you are doing in the class and can compare scores with other classmates</h5>');
 var userName = testContainer.append('<input id="name-input" type = "text" placeholder="Enter your name" >');
-var startBTN = testContainer.append('<br><button type = "submit" class="btn btn-primary" id="sart-BTN">Click to start</button>');
+var startBTN = testContainer.append('<br><button type = "submit" class="btn btn-primary allBtns" id="sart-BTN">Click to start</button>');
 var questionsLeft = $('#questions-left');
 
 
@@ -22,72 +22,94 @@ function timeLeft() {
 }
 //now "on click" for inputting name and storing to local storage
 $('#sart-BTN').on('click', function () {
-    // need to log name to local storage
+    // need to log name to local storage and keep for end of quiz
     var saveName = $("#name-input");
     localStorage.setItem("name", saveName.val());
     var getName = localStorage.getItem("name");
     console.log(getName);
     // need to start timer
+    changeColor();
     timeLeft();
-    // need to clear test div and add questions and answer butns
-    // switch questionsLeft to show how many questions are left
 
+    // need to clear test div and add questions and answer butns
+    hideItems();
+
+    // switch questionsLeft to show how many questions are left
+    for (var i = 0; i < questions.length; i++) {
+        for (var iObj = 0; iObj < questions[i].answer.length; iObj++) {
+            var answerBtn = $('<button>');
+            answerBtn.attr('class', 'btn btn-primary allBtns');
+            answerBtn.text(questions[i].answer[iObj]);
+            testContainer.append(answerBtn);
+        }
+    };
 
 })
+// adding function to hide the first section
+function hideItems() {
+    $('#title').hide();
+    $('#description').hide();
+    $('#name-input').hide();
+    $('#sart-BTN').hide();
+}
+// changing color of the timer to red
+function changeColor() {
+    $('#timer').css({ "color": "#FC4349" });
+}
 
 // ********* objects for questions *********************
 
 
-var questions = {
-    qOne: {
+var questions = [
+    {
         question: 'What is the ',
         answer: ['answer 1', 'answer 2', 'answer 3'],
         correct: 'answer 1'
     },
-    qTwo: {
+    {
+        question: 'What is the moon ',
+        answer: ['answer 1', 'answer 2', 'answer 3'],
+        correct: 'answer 1'
+    },
+    {
+        question: 'What is the ground',
+        answer: ['answer 1', 'answer 2', 'answer 3'],
+        correct: 'answer 1'
+    },
+    {
         question: 'What is the ',
         answer: ['answer 1', 'answer 2', 'answer 3'],
         correct: 'answer 1'
     },
-    qThree: {
+    {
         question: 'What is the ',
         answer: ['answer 1', 'answer 2', 'answer 3'],
         correct: 'answer 1'
     },
-    qFour: {
+    {
         question: 'What is the ',
         answer: ['answer 1', 'answer 2', 'answer 3'],
         correct: 'answer 1'
     },
-    qFive: {
+    {
         question: 'What is the ',
         answer: ['answer 1', 'answer 2', 'answer 3'],
         correct: 'answer 1'
     },
-    qSix: {
+    {
         question: 'What is the ',
         answer: ['answer 1', 'answer 2', 'answer 3'],
         correct: 'answer 1'
     },
-    qSeven: {
+    {
         question: 'What is the ',
         answer: ['answer 1', 'answer 2', 'answer 3'],
         correct: 'answer 1'
     },
-    qEight: {
-        question: 'What is the ',
-        answer: ['answer 1', 'answer 2', 'answer 3'],
-        correct: 'answer 1'
-    },
-    qNine: {
-        question: 'What is the ',
-        answer: ['answer 1', 'answer 2', 'answer 3'],
-        correct: 'answer 1'
-    },
-    qTen: {
+    {
         question: 'What is the ',
         answer: ['answer 1', 'answer 2', 'answer 3'],
         correct: 'answer 1'
     }
-}
+]
 

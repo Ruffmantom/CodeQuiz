@@ -12,7 +12,8 @@
 #timerContainer{
     height: 50px;
     width: 100%;
-    background-color: rgb(9, 255, 0);
+    background-color:#2C3E50;
+    color: azure;
     margin: 0;
 }
 #timer-left-side{
@@ -36,4 +37,11 @@ h4{
     flex-direction: column;
     margin: 50px auto;
     width:50%;
+}
+.allBtns{
+    border: none !important;
+    background-color:#2C3E50 ;
+}
+.allBtns:hover{
+    background-color: rgb(75, 99, 123) !important;
 }
