@@ -35,6 +35,8 @@ $('#sart-BTN').on('click', function () {
     hideItems();
 
     // switch questionsLeft to show how many questions are left
+    questionLeft();
+    // start displaying answer buttons when quiz starts
     for (var i = 0; i < questions.length; i++) {
         for (var iObj = 0; iObj < questions[i].answer.length; iObj++) {
             var answerBtn = $('<button>');
@@ -55,6 +57,10 @@ function hideItems() {
 // changing color of the timer to red
 function changeColor() {
     $('#timer').css({ "color": "#FC4349" });
+}
+// change questionsLeft to display how many are left function
+function questionLeft() {
+    $('#questions-left').text('You have' + ' ' + 'questionsThatAreLeft'); //havent defined that variable yet
 }
 
 // ********* objects for questions *********************
