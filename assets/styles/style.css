@@ -13,6 +13,7 @@
     height: 50px;
     width: 100%;
     background-color: rgb(9, 255, 0);
+    margin: 0;
 }
 #timer-left-side{
     /* border: 1px solid black; */

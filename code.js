@@ -11,7 +11,6 @@ var questionsLeft = $('#questions-left');
 
 // ********* Timer Script *********************
 var secondsLeft = 30;
-
 function timeLeft() {
     var timerInterval = setInterval(function () {
         secondsLeft--;
@@ -19,12 +18,8 @@ function timeLeft() {
         if (secondsLeft === 0) {
             clearInterval(timerInterval);
         }
-
     }, 1000);  //milliseconds
-
 }
-
-
 //now "on click" for inputting name and storing to local storage
 $('#sart-BTN').on('click', function () {
     // need to log name to local storage
@@ -34,7 +29,7 @@ $('#sart-BTN').on('click', function () {
     console.log(getName);
     // need to start timer
     timeLeft();
-    // need to clear test div and add questions and answer buttns
+    // need to clear test div and add questions and answer butns
     // switch questionsLeft to show how many questions are left
 
 
