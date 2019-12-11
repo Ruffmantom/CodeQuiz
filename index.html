@@ -58,16 +58,18 @@
         <div id="question-box" style="display: none;">
             <div id="question"></div>
             <div id="answers">
-                <button class="btn btn-primary allBtns" id="choiceA"></button>
-                <br><button class="btn btn-primary allBtns" id="choiceB"></button>
-                <br><button class="btn btn-primary allBtns" id="choiceC"></button>
+                <button type="button" class="btn btn-primary allBtns" id="choiceA" onclick="checkAnswer('A')"></button>
+                <br><button type="button" class="btn btn-primary allBtns" id="choiceB"
+                    onclick="checkAnswer('B')"></button>
+                <br><button type="button" class="btn btn-primary allBtns" id="choiceC"
+                    onclick="checkAnswer('C')"></button>
             </div>
         </div>
         <!-- setting up the score part at the end of the quiz -->
         <div id="score-card" style="display: none;">
             <h1 id="congrats"></h1>
             <h4 id="name-and-score"><span id="score"></span></h4>
-            <button id="retake" class="btn btn-primary allBtns"></button>
+            <!-- <button id="retake" class="btn btn-primary allBtns"></button> -->
         </div>
 
     </div>
