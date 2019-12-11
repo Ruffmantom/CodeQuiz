@@ -46,6 +46,7 @@ $('#sart-BTN').on('click', function () {
         }
     };
 
+
 })
 // adding function to hide the first section
 function hideItems() {

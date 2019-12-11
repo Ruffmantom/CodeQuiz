@@ -55,9 +55,19 @@
     <div class="jumbotron testBox" id="test-box">
 
         <!-- setting up for questions section once user clicks start BTN -->
-        <div id="question-box">
+        <div id="question-box" style="display: none;">
             <div id="question"></div>
-            <div id="answers"></div>
+            <div id="answers">
+                <button class="btn btn-primary allBtns"></button>
+                <button class="btn btn-primary allBtns"></button>
+                <button class="btn btn-primary allBtns"></button>
+            </div>
+        </div>
+        <!-- setting up the score part at the end of the quiz -->
+        <div id="score-card" style="display: none;">
+            <h1 id="congrats"></h1>
+            <h4 id="name-and-score"></h4>
+            <button id="retake" class="btn btn-primary allBtns"></button>
         </div>
 
     </div>
