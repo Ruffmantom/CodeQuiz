@@ -69,24 +69,24 @@ var questions = [
         correct: 'B'
     },
     {
-        question: 'What is the moon ',
-        answerA: 'wrong',
-        answerB: 'wrong',
-        answerC: 'correct',
+        question: 'What is the common key used at the end of a line of code?',
+        answerA: 'console.log("hello!").',
+        answerB: 'console.log("hello!")/',
+        answerC: 'console.log("hello!");',
         correct: 'C'
     },
     {
-        question: 'What is the cow ',
-        answerA: 'correct',
-        answerB: 'wrong',
-        answerC: 'wrong',
+        question: 'What is the best way to submit work to gitHub after everything is added and commited?',
+        answerA: 'git push',
+        answerB: 'git -m push',
+        answerC: 'g -u p',
         correct: 'A'
     },
     {
-        question: 'What is the dog ',
-        answerA: 'correct',
-        answerB: 'wrong',
-        answerC: 'wrong',
+        question: 'var arr = [12, 46, 68, 93]; How do we return the 3rd number "68" to our console? ',
+        answerA: 'console.log(arr[2]);',
+        answerB: 'console.log(arr[3]);',
+        answerC: 'console.log(arr(2));',
         correct: 'A'
     },
     {
@@ -104,17 +104,17 @@ var questions = [
         correct: 'B'
     },
     {
-        question: 'What is the boondocks ',
-        answerA: 'wrong',
-        answerB: 'correct',
-        answerC: 'wrong',
+        question: 'What goes in the quotes? for (var i = 0,"        ", i++ ){ }; ',
+        answerA: '"e < arr.lengthOf"',
+        answerB: '"i < arr.length"',
+        answerC: '"i < arr.length()"',
         correct: 'B'
     },
     {
-        question: 'What is the circle ',
-        answerA: 'wrong',
-        answerB: 'wrong',
-        answerC: 'correct',
+        question: 'What is the syntax for Jquery? ',
+        answerA: '%("#my_ID")',
+        answerB: '$(my_ID)',
+        answerC: '$("#my_ID")',
         correct: 'C'
     },
     {
@@ -154,10 +154,12 @@ function checkAnswer(answer) {
         count++;
         console.log(count);
         nameScore.text(savedName.toUpperCase() + ' Your score was ' + count + ' out of 10');
+
         // questions left goes down 
         questionsThatAreLeft--;
-        //need to make it go down in the text
+        //need to make question count go down in the text
         questionLeft();
+        // if the suer gets it right, add 10 seconds
         secondsLeft += 10;
         console.log('working');
         //need to make the question switch now
@@ -166,6 +168,14 @@ function checkAnswer(answer) {
             renderQuestion();
         }
         endQuiz();
+        // user grade
+        if (count === 10) {
+            $('#nice-job').text('Nice job! You scored great!!');
+        } else if (count >= 6) {
+            $('#nice-job').text('Dang not so great! I would study more');
+        } else {
+            $('#nice-job').text('Ouch.. You should totaly study more');
+        }
     } else {
         // need to switch questions when answer is wrong too
         if (runningQuestion < lastquestion) {
@@ -175,7 +185,7 @@ function checkAnswer(answer) {
         questionsThatAreLeft--;
         //need to make it go down in the text
         questionLeft();
-        // time reduced by 5 seconds
+        // time reduced by 10 seconds if worng
         secondsLeft -= 10;
         console.log('not working');
         endQuiz();
@@ -191,7 +201,11 @@ function endQuiz() {
         $('#score-card').css({ 'display': 'block' });
         // need to stop and reset timer
         // need to add score and saved name
+        // change color of progress bar
+        $('#timerContainer').css({ 'background': '#FC4349' });
+        $('#timer').css({ "color": "#2C3E50" });
 
     }
 }
+
 
