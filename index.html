@@ -53,7 +53,13 @@
     </div>
     <!-- **************** mid section ********************** -->
     <div class="jumbotron testBox" id="test-box">
-
+        <div id="startDiv" style="display: block;">
+            <h1 id="title">Welcome to CodeQuiz!</h1>
+            <h5 id="description">Here you will see how you are doing in the class and can compare scores with other
+                classmates</h5>
+            <input id="name-input" type="text" placeholder="Enter your name">
+            <br><button id="start-BTN" type="submit" class="btn btn-primary allBtns">Click to start</button>
+        </div>
         <!-- setting up for questions section once user clicks start BTN -->
         <div id="question-box" style="display: none;">
             <div id="question"></div>
@@ -67,8 +73,8 @@
         </div>
         <!-- setting up the score part at the end of the quiz -->
         <div id="score-card" style="display: none;">
-            <h1 id="congrats"></h1>
-            <h4 id="name-and-score"><span id="score"></span></h4>
+            <h1 id="congrats">Lets see how you did!</h1>
+            <h4 id="name-and-score"></h4>
             <!-- <button id="retake" class="btn btn-primary allBtns"></button> -->
         </div>
 

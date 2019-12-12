@@ -1,37 +1,40 @@
-// Quiz script
-// ********* Test box on load up *********************
-var testContainer = $('#test-box');
+
 // creating <tag> variables for the first step when page loads
-var title = testContainer.append('<h1 id="title">Welcome to CodeQuiz!</h1>');
-var description = testContainer.append('<h5 id="description">Here you will see how you are doing in the class and can compare scores with other classmates</h5>');
-var userName = testContainer.append('<input id="name-input" type = "text" placeholder="Enter your name" >');
-var startBTN = testContainer.append('<br><button type = "submit" class="btn btn-primary allBtns" id="start-BTN">Click to start</button>');
+var userName = $('#name-input');
+var startBTN = $('#start-BTN');
 var questionsLeft = $('#questions-left');
 var question = $('#question');
 var choiceA = $('#choiceA');
 var choiceB = $('#choiceB');
 var choiceC = $('#choiceC');
 var congratsMessage = $('#congrats');
-var score = $('#score')
-
+var nameScore = $('#name-and-score');
+// render the progress number
+var count = 0;
+// count is for the questions you get correct it will be added to the score variable text
+var questionsThatAreLeft = 10;
 // ********* Timer Script *********************
 var secondsLeft = 30;
 function timeLeft() {
     var timerInterval = setInterval(function () {
         secondsLeft--;
         $('#timer').html(secondsLeft);
-        if (secondsLeft === 0) {
+        if (secondsLeft === 0 || count === 10 || runningQuestion === 10) {
             clearInterval(timerInterval);
+            secondsLeft = 30;
+            console.log('not clearing interval');
         }
     }, 1000);  //milliseconds
 }
+// get the name from the local storage
+var savedName = localStorage.getItem("name");
+console.log(savedName);
+
 //now "on click" for inputting name and storing to local storage
 $('#start-BTN').on('click', function () {
     // need to log name to local storage and keep for end of quiz
     var getName = $("#name-input");
     localStorage.setItem("name", getName.val());
-    var savedName = localStorage.getItem("name");
-    console.log(savedName);
     // need to start timer
     changeColor();
     timeLeft();
@@ -46,10 +49,7 @@ $('#start-BTN').on('click', function () {
 
 // adding function to hide the first section
 function hideItems() {
-    $('#title').hide();
-    $('#description').hide();
-    $('#name-input').hide();
-    $('#sart-BTN').hide();
+    $('#startDiv').hide();
 }
 // changing color of the timer to red
 function changeColor() {
@@ -113,8 +113,8 @@ var questions = [
     {
         question: 'What is the circle ',
         answerA: 'wrong',
-        answerB: 'correct',
-        answerC: 'wrong',
+        answerB: 'wrong',
+        answerC: 'correct',
         correct: 'C'
     },
     {
@@ -146,15 +146,14 @@ function renderQuestion() {
     choiceB.text(q.answerB);
     choiceC.text(q.answerC);
 };
-// render the progress number
-var count = 0;
-// count is for the questions you get correct it will be added to the score variable text
-var questionsThatAreLeft = 10;
+
 
 // check if answer was correct
 function checkAnswer(answer) {
     if (answer === questions[runningQuestion].correct) {
         count++;
+        console.log(count);
+        nameScore.text(savedName.toUpperCase() + ' Your score was ' + count + ' out of 10');
         // questions left goes down 
         questionsThatAreLeft--;
         //need to make it go down in the text
@@ -177,7 +176,7 @@ function checkAnswer(answer) {
         //need to make it go down in the text
         questionLeft();
         // time reduced by 5 seconds
-        secondsLeft -= 5;
+        secondsLeft -= 10;
         console.log('not working');
         endQuiz();
     }
@@ -191,6 +190,8 @@ function endQuiz() {
         //need to show the score-card
         $('#score-card').css({ 'display': 'block' });
         // need to stop and reset timer
+        // need to add score and saved name
 
     }
 }
+

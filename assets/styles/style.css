@@ -44,6 +44,23 @@
     height: 300px; 
     position: relative;
 }
+#startDiv{
+    /* border: 1px solid blue; */
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    height: 90%;
+    margin: auto;
+}
+#description{
+    margin: 20px auto;
+    width: 100%;
+    line-height: 1.5;
+}
+#name-input{
+    width: 60%;
+    padding-left: 10px;
+}
 #question{
     width: 100%;
     height: 90px;
@@ -54,7 +71,7 @@
 .allBtns{
     border: none !important;
     background-color:#2C3E50 ;
-    width:40%;
+    width:60%;
     margin: 10px 0 0 0;
 }
 .allBtns:hover{
