@@ -34,7 +34,7 @@
 #timer{
     margin-right: 0;
 }
-/* *************main section******************* */
+
 #test-box{
     display: flex;
     flex-direction: column;
@@ -83,4 +83,14 @@
     /* border: 1px solid blue; */
     height: auto;
     width: 93%;
+}
+
+/* ************* score card section ******************* */
+
+#score-card{
+display: flex;
+flex-direction: column;
+text-align: center;
+color: #2C3E50;
+margin: auto;
 }

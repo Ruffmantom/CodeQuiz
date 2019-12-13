@@ -18,10 +18,10 @@ var secondsLeft = 30;
 function timeLeft() {
     var timerInterval = setInterval(function () {
         secondsLeft--;
-        $('#timer').html(secondsLeft);
-        if (secondsLeft === 0 || count === 10 || runningQuestion === 10) {
+        $('#timer').text(secondsLeft);
+        if (secondsLeft <= 0) {
+            endQuiz();
             clearInterval(timerInterval);
-            secondsLeft = 30;
             console.log('not clearing interval');
         }
     }, 1000);  //milliseconds
@@ -45,6 +45,7 @@ $('#start-BTN').on('click', function () {
     // start displaying answer buttons when quiz starts
     renderQuestion();
     $('#question-box').css({ 'display': 'block' });
+
 })
 
 // adding function to hide the first section
@@ -90,21 +91,21 @@ var questions = [
         correct: 'A'
     },
     {
-        question: 'What is the sheep ',
-        answerA: 'wrong',
-        answerB: 'wrong',
-        answerC: 'correct',
+        question: 'What specific type of code is this: var userName = { firstName: John, lastName: Robertson, age: 55}; ',
+        answerA: 'Array',
+        answerB: 'Variable',
+        answerC: 'Object',
         correct: 'C'
     },
     {
-        question: 'What is the land',
-        answerA: 'wrong',
-        answerB: 'correct',
-        answerC: 'wrong',
+        question: 'How many data types can you put in an array?',
+        answerA: 'only 5',
+        answerB: 'As many as you want',
+        answerC: 'only as many as 10',
         correct: 'B'
     },
     {
-        question: 'What goes in the quotes? for (var i = 0,"        ", i++ ){ }; ',
+        question: 'What goes in the quotes? for (var i = 0,"__________", i++ ){ }; ',
         answerA: '"e < arr.lengthOf"',
         answerB: '"i < arr.length"',
         answerC: '"i < arr.length()"',
@@ -118,19 +119,19 @@ var questions = [
         correct: 'C'
     },
     {
-        question: 'What is the freddy ',
-        answerA: 'wrong',
-        answerB: 'wrong',
-        answerC: 'correct',
+        question: 'What is the "console" in console.log()',
+        answerA: 'Reader',
+        answerB: 'Variable',
+        answerC: 'Object',
         correct: 'C'
     },
     {
-        question: 'What is the clock ',
-        answerA: 'correct',
-        answerB: 'wrong',
-        answerC: 'wrong',
+        question: 'Can you store a function inside a function and use it outside of the parent?',
+        answerA: 'No you cant',
+        answerB: 'Yes you can',
+        answerC: 'Only if its called',
         correct: 'A'
-    },
+    }
 
 ]
 
@@ -170,11 +171,11 @@ function checkAnswer(answer) {
         endQuiz();
         // user grade
         if (count === 10) {
-            $('#nice-job').text('Nice job! You scored great!!');
-        } else if (count >= 6) {
-            $('#nice-job').text('Dang not so great! I would study more');
+            $('#nice-job').text('Nice job! You scored great!! A+');
+        } else if (count >= 7) {
+            $('#nice-job').text('Dang nice job! I\'d give you a B');
         } else {
-            $('#nice-job').text('Ouch.. You should totaly study more');
+            $('#nice-job').text('Ouch.. You should totaly study more. F+');
         }
     } else {
         // need to switch questions when answer is wrong too
@@ -194,17 +195,15 @@ function checkAnswer(answer) {
 }
 // end quiz
 function endQuiz() {
-    if (count === 10 || secondsLeft === 0 || questionsThatAreLeft === 0) {
+    if (secondsLeft <= 0 || count === 10 || questionsThatAreLeft === 0) {
         // need to hide the question div
         $('#question-box').css({ 'display': 'none' });
         //need to show the score-card
         $('#score-card').css({ 'display': 'block' });
-        // need to stop and reset timer
-        // need to add score and saved name
         // change color of progress bar
         $('#timerContainer').css({ 'background': '#FC4349' });
-        $('#timer').css({ "color": "#2C3E50" });
-
+        // need to stop and reset timer
+        $('#timer').hide();
     }
 }
 
