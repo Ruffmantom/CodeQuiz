@@ -120,7 +120,7 @@ display: flex;
     }
     #answers{
         position: relative;
-        border: 1px solid blue;
+        /* border: 1px solid blue; */
         /* margin-top: 20px !important; */
         width: 100%;
     }
