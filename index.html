@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="assets/styles/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="assets/styles/style.css">
+    <link rel="stylesheet" href="assets/styles/quizStyle.css">
     <link
         href="https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700,900|Muli:300,400,500,700&display=swap"
         rel="stylesheet">
@@ -47,8 +47,11 @@
             <h4 id="questions-left">Please click begin</h4>
         </div>
         <div class="col-md-6" id="timer-right-side">
-            <h4 class="head-h4" id="timer">30</h4>
-            <h4 class="head-h4">Seconds till Quiz ends</h4>
+            <div id="timer-holder">
+                <h4 class="head-h4" id="timer">30</h4>
+                <h4 class="head-h4">Seconds till Quiz ends</h4>
+            </div>
+
         </div>
     </div>
     <!-- **************** mid section ********************** -->
@@ -82,7 +85,12 @@
     </div>
     <!-- **************** footer section ********************** -->
 
-
+    <!-- footer section -->
+    <div class="row navbar sticky-bottom text-center footer">
+        <div class=" col-md-12 foot justify-content-center">
+            <p>© copyright</p>
+        </div>
+    </div>
 
     <!-- ********************** script links ****************** -->
     <script src="https://code.jquery.com/jquery-3.4.1.js"
@@ -96,7 +104,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
-    <script src="/code.js"></script>
+    <script src="code.js"></script>
 
 </body>
 

@@ -173,7 +173,7 @@ function checkAnswer(answer) {
         if (count === 10) {
             $('#nice-job').text('Nice job! You scored great!! A+');
         } else if (count >= 7) {
-            $('#nice-job').text('Dang nice job! I\'d give you a B');
+            $('#nice-job').text('Not to shabby! I\'d give you a B');
         } else {
             $('#nice-job').text('Ouch.. You should totaly study more. F+');
         }
