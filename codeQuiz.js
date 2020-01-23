@@ -26,15 +26,17 @@ function timeLeft() {
         }
     }, 1000);  //milliseconds
 }
+// clear localstorage when page loads
+localStorage.clear();
 // get the name from the local storage
-var savedName = localStorage.getItem("name");
-console.log(savedName);
+
 
 //now "on click" for inputting name and storing to local storage
 $('#start-BTN').on('click', function () {
     // need to log name to local storage and keep for end of quiz
     var getName = $("#name-input");
     localStorage.setItem("name", getName.val());
+
     // need to start timer
     changeColor();
     timeLeft();
@@ -154,6 +156,9 @@ function checkAnswer(answer) {
     if (answer === questions[runningQuestion].correct) {
         count++;
         console.log(count);
+        var savedName = localStorage.getItem("name");
+        // console.log(savedName);
+        console.log(savedName);
         nameScore.text(savedName.toUpperCase() + ' Your score was ' + count + ' out of 10');
 
         // questions left goes down 
