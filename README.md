@@ -1,9 +1,14 @@
 # CodeQuiz
 making a quiz with HTML, CSS and Javascript
 
-This README is for the purpose to showcase the work I have done to accomplish this homework. 
-So I really wanted to show the process of how it all came together but I will have to update this read me when I get a chance. Im very pleased with how the program turned out, I just need to tweak a few bugs and fix some things that I would like to see.
-Honestly this was the most code or logic we have done so far and uses everything pluss a little more that we have learned hah. Im glad to see the progress my brain is making in learning this lol.
+This README is for the purpose to showcase the work I have done to accomplish this homework.
+The functionality of this quiz was all made with Javascript/ jQuery. Using an object that stored all the questions and looping through the object to display them. 
+
+To start, simply type your name and click start. 
+
+Your first question will pop up and the timer up at the top left will start to count down. If you get an answer wrong, the timer will get a 10 second decrement. If you get the answer right you will get a 10 second increase. At the end of the quiz or if you run out of time it will showcase your name that was saved with local storage and the score you got. 
+
+This was a really fun project and I plan on improving it every now and then to really get rid of all the bugs.
 
 
 
