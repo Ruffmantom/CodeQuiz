@@ -24,7 +24,7 @@ To work the app offline you will need to run this in your browser. You can simpl
 ---
 
 ### When you Type your name into the input and click the start button, it saves to Local storage then you are displayed the first question. Be careful tho, each question you get right will reward you with 10 seconds but if you get it wrong it will subtract your time by 10 seconds. 
-![quiz starts](/assets/images/quizStart.PNG)
+![quiz starts](/assets/images/quizquestions.PNG)
 ---
 
 ### When you finish the quiz it will display your name that you inputted at the beginning. It will display your score and let you know if you need to study or not. Future Development will be to make it so if you run out of time or get to many questions wrong, it will display your information and let you know to study.
